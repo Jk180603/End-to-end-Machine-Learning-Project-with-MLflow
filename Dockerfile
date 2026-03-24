@@ -1,9 +1,4 @@
-FROM python:3.8-slim-buster
-
-# Install system dependencies (minimal)
-RUN apt-get update -y && \
-    apt-get install -y curl && \
-    apt-get clean
+FROM python:3.11-slim
 
 # Set working directory
 WORKDIR /app
@@ -11,11 +6,11 @@ WORKDIR /app
 # Copy files
 COPY . /app
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Upgrade pip first (important)
+RUN pip install --upgrade pip
 
-# Install AWS CLI (reliable way)
-RUN pip install awscli
+# Install requirements
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Run app
 CMD ["python3", "app.py"]
