@@ -52,8 +52,8 @@ open up you local host and port
 
 ##Demo
 ![demo](Output_1.png)
-![Ci_cd_done](ci_cd_done.png)
-![Aws_done](Aws_done.png)
+![Ci_cd_done](Ci_cd_done.png)
+![Aws_done](aws_done.png)
 
 ## MLflow
 
